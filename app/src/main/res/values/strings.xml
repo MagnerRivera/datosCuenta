@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Coink</string>
+    <string name="datos">DATOS DE TU CUENTA</string>
+    <string name="primerNombre">Primer Nombre</string>
+    <string name="segundoNombre">Segundo Nombre</string>
+    <string name="primerApellido">Primer Apellido</string>
+    <string name="segundoApellido">Segundo Apellido</string>
+    <string name="nombre">Magner Rivera</string>
+    <string name="genero">Genero</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="continuar">Continuar</string>
+</resources>
