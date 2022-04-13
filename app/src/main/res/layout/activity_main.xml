@@ -9,10 +9,13 @@
         tools:context=".MainActivity">
 
         <ImageView
+            android:id="@+id/imagenInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/coinkinicio" />
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="250dp"
+            android:src="@drawable/coinkinicio"
+            />
 
         <include
             android:id="@+id/splash"
@@ -29,6 +32,86 @@
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="54dp"
             android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/Verificar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-230dp"
+            android:layout_marginTop="100dp"
+            android:layout_toEndOf="@+id/imagenInicio"
+            android:text="@string/preguntaDatos"
+            android:textColor="@color/teal_700"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/datosNecesarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-230dp"
+            android:layout_marginTop="150dp"
+            android:layout_toEndOf="@+id/imagenInicio"
+            android:text="@string/pedirDatos"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerTipoDocumento"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="300dp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/documento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:drawableTint="@color/white"
+            android:hint="@string/numero"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="@string/fecha"
+            android:layout_marginTop="400dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/fechaExpe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="@string/fechaExpe"
+            android:layout_marginTop="450dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/genero"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="500dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnContinuar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="550dp"
+            android:background="@drawable/btn_continuar"
+            android:text="@string/continuar"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            />
 
     </RelativeLayout>
 </layout>

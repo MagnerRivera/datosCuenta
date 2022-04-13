@@ -7,9 +7,9 @@ import com.example.coink.R
 
 /**EXTENSION PARA MOSTRAR UNA VIEW CON UNA ANIMACIÓN
  * @param context
- * @param duration duracion de cuanto tiempo va a tardar la animacion
+ * @param duration duración de cuanto tiempo va a tardar la animacion
  * */
-fun View.animAppear(context: Context, duration: Int): Unit {
+fun View.animAppear(context: Context, duration: Int) {
     val animations      = AnimationUtils.loadAnimation(context, R.anim.anim_appear)
     animations.duration = duration.toLong()
 
@@ -20,7 +20,7 @@ fun View.animAppear(context: Context, duration: Int): Unit {
  * @param context
  * @param duration duracion de cuanto tiempo va a tardar la animacion
  * */
-fun View.animVanish(context: Context, duration: Int): Unit {
+fun View.animVanish(context: Context, duration: Int) {
     val animations      = AnimationUtils.loadAnimation(context, R.anim.anim_vanish)
     animations.duration = duration.toLong()
 
