@@ -6,14 +6,15 @@
     <string name="primerApellido">Primer Apellido</string>
     <string name="segundoApellido">Segundo Apellido</string>
     <string name="nombre">Magner Rivera</string>
-    <string name="genero">Genero que aparece en tu documento de identidad</string>
+    <string name="generoVerifi">Genero</string>
     <string name="masculino">Masculino</string>
     <string name="femenino">Femenino</string>
     <string name="cancelar"><b>Cancelar</b></string>
     <string name="continuar"><b>Continuar</b></string>
-    <string name="preguntaDatos"><b>¿CUALES SON TUS DATOS</b></string>
+    <string name="preguntaDatos"><b>¿CUALES SON TUS DATOS?</b></string>
     <string name="pedirDatos">Ahora necesitamos saber algunos datos tuyos</string>
     <string name="verificar">VERIFICA TUS DATOS</string>
+    <string name="texto">¿Estos son tus datos?....</string>
     <string name="numero">Número de documento</string>
     <string name="fecha">Fecha de nacimiento</string>
     <string name="fechaExpe">Fecha de expedición del documento</string>

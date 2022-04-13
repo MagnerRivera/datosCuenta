@@ -1,6 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        tools:context=".VerificarDatos">
+
+        <ImageView
+            android:id="@+id/imagenInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="250dp"
+            android:src="@drawable/coinkinicio" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="15dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="54dp" />
+
+        <TextView
+            android:id="@+id/Verificar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-230dp"
+            android:layout_marginTop="100dp"
+            android:layout_toEndOf="@+id/imagenInicio"
+            android:text="@string/verificar"
+            android:textColor="@color/teal_700" />
+
+        <TextView
+            android:id="@+id/datosNecesarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-230dp"
+            android:layout_marginTop="150dp"
+            android:layout_toEndOf="@+id/imagenInicio"
+            android:text="@string/texto"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/primerNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:hint="@string/primerNombre"
+            android:textColor="@color/black"
+            app:drawableTint="@color/white" />
+
+        <TextView
+            android:id="@+id/traerNombre1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="360dp"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/segundoNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:hint="@string/segundoNombre"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/traerNombre2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="440dp"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/primerApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="480dp"
+            android:hint="@string/primerApellido"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/traerApellido1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="520dp"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/segundoApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="560dp"
+            android:hint="@string/segundoApellido"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/traerApellido2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="600dp"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="640dp"
+            android:hint="@string/generoVerifi"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/traerGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="680dp"
+            android:ems="10" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="720dp"
+            android:background="@drawable/btn_cancelar"
+            android:text="@string/cancelar"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContinuar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="720dp"
+            android:background="@drawable/btn_continuar"
+            android:text="@string/continuar"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+</layout>
