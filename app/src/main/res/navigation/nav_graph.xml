@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/datosCuenta">
+
+    <fragment
+        android:id="@+id/datosCuenta"
+        android:name="com.example.coink.fragment.DatosCuenta"
+        android:label="fragment_datos_cuenta"
+        tools:layout="@layout/fragment_datos_cuenta" >
+        <action
+            android:id="@+id/ir_Verificar"
+            app:destination="@id/verificarDatos" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificarDatos"
+        android:name="com.example.coink.fragment.VerificarDatos"
+        tools:layout="@layout/fragment_verificar_datos"
+        android:label="VerificarDatos" >
+        <argument
+            android:name="genero"
+            app:argType="string" />
+    </fragment>
+</navigation>

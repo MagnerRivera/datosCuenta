@@ -1,116 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
 
-    <RelativeLayout
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        tools:context=".MainActivity">
+        android:keepScreenOn="true"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
+        tools:context=".MainActivity"
+        tools:layout="@layout/fragment_datos_cuenta"
+        android:visibility="gone"/>
 
-        <ImageView
-            android:id="@+id/imagenInicio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="250dp"
-            android:src="@drawable/coinkinicio" />
-
-        <include
-            android:id="@+id/splash"
-            layout="@layout/splash" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/white"
-            android:elevation="15dp"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            android:visibility="gone"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="54dp" />
-
-        <TextView
-            android:id="@+id/Verificar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-230dp"
-            android:layout_marginTop="140dp"
-            android:layout_toEndOf="@+id/imagenInicio"
-            android:text="@string/preguntaDatos"
-            android:textColor="@color/teal_700"
-            android:textSize="17sp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/datosNecesarios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-230dp"
-            android:layout_marginTop="160dp"
-            android:layout_toEndOf="@+id/imagenInicio"
-            android:text="@string/pedirDatos"
-            android:textSize="15sp"
-            android:visibility="gone" />
-
-        <Spinner
-            android:id="@+id/spinnerTipoDocumento"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:visibility="gone" />
-
-        <EditText
-            android:id="@+id/documento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
-            android:drawableTint="@color/white"
-            android:hint="@string/numero"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:visibility="gone" />
-
-        <EditText
-            android:id="@+id/fecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="420dp"
-            android:ems="10"
-            android:hint="@string/fecha"
-            android:inputType="date"
-            android:visibility="gone" />
-
-        <EditText
-            android:id="@+id/fechaExpe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="480dp"
-            android:ems="10"
-            android:hint="@string/fechaExpe"
-            android:inputType="date"
-            android:visibility="gone" />
-
-        <Spinner
-            android:id="@+id/spinnerGenero"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="540dp"
-            android:visibility="gone" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnContinuar"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="650dp"
-            android:background="@drawable/btn_continuar"
-            android:text="@string/continuar"
-            android:textColor="@color/black"
-            android:visibility="gone" />
-
-    </RelativeLayout>
-</layout>
+    <include
+        android:id="@+id/splash"
+        layout="@layout/splash" />
+</RelativeLayout>
