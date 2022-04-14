@@ -47,13 +47,37 @@ class DatosCuenta : Fragment() {
 
     private fun spinnerTypeDocument() {
         val spinner = mainBinding.spinnerTipoDocumento
-        val arrayAdapter =
-            ArrayAdapter(
-                requireContext(),
-                android.R.layout.simple_spinner_dropdown_item,
-                typedocument
-            )
-        spinner.adapter = arrayAdapter
+        val spinnerAdapter = object : ArrayAdapter<String>(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            typedocument
+        ) {
+
+            override fun isEnabled(position: Int): Boolean {
+                // Disable the first item from Spinner
+                // First item will be used for hint
+                return position != 0
+            }
+
+            override fun getDropDownView(
+                position: Int,
+                convertView: View?,
+                parent: ViewGroup
+            ): View {
+                val view: TextView =
+                    super.getDropDownView(position, convertView, parent) as TextView
+                //set the color of first item in the drop down list to gray
+                if (position == 0) {
+                    view.setTextColor(Color.GRAY)
+                } else {
+                    //here it is possible to define color for other items by
+                    //view.setTextColor(Color.RED)
+                }
+                return view
+            }
+
+        }
+        spinner.adapter = spinnerAdapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 spinner.onItemSelectedListener = this
@@ -126,7 +150,7 @@ class DatosCuenta : Fragment() {
                 ) {
                     try {
                         System.out.println("DatosCuenta" + response.body()?.string())
-                        navigateTo(DatosCuentaDirections.irVerificar(mainBinding.spinnerGenero.selectedItem.toString()))
+                        validateData()
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
@@ -134,10 +158,37 @@ class DatosCuenta : Fragment() {
                 }
 
                 override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
-                    Toast.makeText(requireContext(), t.message,Toast.LENGTH_LONG).show()
-                    navigateTo(DatosCuentaDirections.irVerificar(mainBinding.spinnerGenero.selectedItem.toString()))
+                    Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
                 }
             })
+        }
+    }
+
+    /**
+     * Meotod para validar que todos los campos contengan información
+     */
+
+    private fun validateData() {
+        when {
+            mainBinding.spinnerTipoDocumento.selectedItemPosition == 0 -> {
+                Toast.makeText(requireContext(), "Llene campo Tipo de Documento", Toast.LENGTH_LONG)
+                    .show()
+            }
+            mainBinding.documento.text.isEmpty() -> {
+                Toast.makeText(requireContext(), "Llene campo Documento", Toast.LENGTH_LONG).show()
+            }
+            mainBinding.fecha.text.isEmpty() -> {
+                Toast.makeText(requireContext(), "Llene campo Fecha", Toast.LENGTH_LONG).show()
+            }
+            mainBinding.fechaExpe.text.isEmpty() -> {
+                Toast.makeText(requireContext(), "Llene campo Fecha", Toast.LENGTH_LONG).show()
+            }
+            mainBinding.spinnerGenero.selectedItemPosition == 0 -> {
+                Toast.makeText(requireContext(), "Llene campo Genero", Toast.LENGTH_LONG).show()
+            }
+            else -> {
+                navigateTo(DatosCuentaDirections.irVerificar(mainBinding.spinnerGenero.selectedItem.toString()))
+            }
         }
     }
 }

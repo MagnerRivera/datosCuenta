@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         }, 1000)
     }
 
+    /**
+     * metodo para mostrar los parametros de la vista despues del splash
+     */
+
     private fun despuesinit() {
         Handler().postDelayed({
             biding.fragmentContainer.animAppear(this, 3000)

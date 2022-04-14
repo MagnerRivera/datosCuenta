@@ -18,16 +18,15 @@
             android:src="@drawable/coinkinicio" />
 
         <include
-            layout="@layout/toolbar"
             android:id="@+id/datosToolbar"
-            />
+            layout="@layout/toolbar" />
 
         <TextView
             android:id="@+id/Verificar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-230dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginStart="-240dp"
+            android:layout_marginTop="120dp"
             android:layout_toEndOf="@+id/imagenInicio"
             android:text="@string/preguntaDatos"
             android:textColor="@color/teal_700"
@@ -37,8 +36,8 @@
             android:id="@+id/datosNecesarios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-230dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginStart="-240dp"
+            android:layout_marginTop="150dp"
             android:layout_toEndOf="@+id/imagenInicio"
             android:text="@string/pedirDatos"
             android:textSize="15sp" />
@@ -47,7 +46,8 @@
             android:id="@+id/spinnerTipoDocumento"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp" />
+            android:layout_marginTop="300dp"
+            android:background="@drawable/spinner" />
 
         <EditText
             android:id="@+id/documento"
@@ -95,9 +95,9 @@
         <View
             android:id="@+id/view"
             android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_marginTop="270dp"
-            android:background="@color/verde"/>
+            android:layout_height="1dp"
+            android:layout_marginTop="250dp"
+            android:background="@color/verde" />
 
     </RelativeLayout>
 </layout>
