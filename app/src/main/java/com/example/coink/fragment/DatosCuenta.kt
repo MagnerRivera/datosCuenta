@@ -8,9 +8,19 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.coink.data.PayLoad
+import com.example.coink.data.RetrofitAdapter
 import com.example.coink.databinding.FragmentDatosCuentaBinding
 import com.example.coink.utils.navigateTo
+import com.google.gson.Gson
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.IOException
+
 
 class DatosCuenta : Fragment() {
 
@@ -107,7 +117,27 @@ class DatosCuenta : Fragment() {
 
     private fun enviarDatos() {
         mainBinding.btnContinuar.setOnClickListener {
-            navigateTo(DatosCuentaDirections.irVerificar(mainBinding.spinnerGenero.selectedItem.toString()))
+            val toJson = Gson().toJson(PayLoad("jsonEncryptado"))
+            val result: Call<ResponseBody>? = RetrofitAdapter.apiService?.signup(toJson)
+            result?.enqueue(object : Callback<ResponseBody?> {
+                override fun onResponse(
+                    call: Call<ResponseBody?>,
+                    response: Response<ResponseBody?>
+                ) {
+                    try {
+                        System.out.println("DatosCuenta" + response.body()?.string())
+                        navigateTo(DatosCuentaDirections.irVerificar(mainBinding.spinnerGenero.selectedItem.toString()))
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+
+                }
+
+                override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
+                    Toast.makeText(requireContext(), t.message,Toast.LENGTH_LONG).show()
+                    navigateTo(DatosCuentaDirections.irVerificar(mainBinding.spinnerGenero.selectedItem.toString()))
+                }
+            })
         }
     }
 }

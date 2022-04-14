@@ -18,114 +18,129 @@
                 android:id="@+id/imagenInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="120dp"
                 android:layout_marginEnd="250dp"
                 android:src="@drawable/coinkinicio" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="409dp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:elevation="15dp"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="54dp" />
+            <include
+                layout="@layout/toolbar"
+                android:id="@+id/includeTolbar"
+                />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_marginTop="270dp"
+                android:background="@color/verde"/>
+
 
             <TextView
                 android:id="@+id/Verificar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="95dp"
-                android:layout_toStartOf="@+id/imagenInicio"
+                android:layout_marginStart="-230dp"
+                android:layout_marginTop="140dp"
+                android:layout_toEndOf="@+id/imagenInicio"
                 android:text="@string/verificar"
-                android:textColor="@color/teal_700" />
+                android:textColor="@color/teal_700"
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/datosNecesarios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="150dp"
-                android:layout_marginEnd="80dp"
-                android:layout_toStartOf="@+id/imagenInicio"
+                android:layout_marginStart="-230dp"
+                android:layout_marginTop="180dp"
+                android:layout_toEndOf="@+id/imagenInicio"
                 android:text="@string/texto"
-                android:textColor="@color/black" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/primerNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="320dp"
+                android:layout_marginTop="300dp"
                 android:hint="@string/primerNombre"
                 android:textColor="@color/black"
+                android:textSize="16sp"
                 app:drawableTint="@color/white" />
 
             <TextView
                 android:id="@+id/traerNombre1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="360dp" />
+                android:layout_marginTop="340dp"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/segundoNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="400dp"
+                android:layout_marginTop="380dp"
                 android:hint="@string/segundoNombre"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/traerNombre2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="440dp" />
+                android:layout_marginTop="420dp"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/primerApellido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="480dp"
+                android:layout_marginTop="460dp"
                 android:hint="@string/primerApellido"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/traerApellido1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="520dp" />
+                android:layout_marginTop="500dp"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/segundoApellido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="560dp"
+                android:layout_marginTop="540dp"
                 android:hint="@string/segundoApellido"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/traerApellido2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="600dp" />
+                android:layout_marginTop="580dp"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/genero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="640dp"
+                android:layout_marginTop="620dp"
                 android:hint="@string/generoVerifi"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/traerGenero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="680dp"
-                android:textSize="16sp" />
+                android:layout_marginTop="660dp"
+                android:textColor="@color/teal_700"
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCancelar"

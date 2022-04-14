@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:elevation="15dp"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="54dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/back"
+        android:layout_marginBottom="40sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/datos"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:layout_marginBottom="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/check1"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/conseleccionar" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/gris" />
+
+            <ImageView
+                android:id="@+id/check2"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sinseleccionar" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/gris" />
+
+            <ImageView
+                android:id="@+id/check3"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sinseleccionar" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@color/gris" />
+
+            <ImageView
+                android:id="@+id/check4"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sinseleccionar" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

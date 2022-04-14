@@ -17,17 +17,10 @@
             android:layout_marginEnd="250dp"
             android:src="@drawable/coinkinicio" />
 
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/white"
-            android:elevation="15dp"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="54dp" />
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/datosToolbar"
+            />
 
         <TextView
             android:id="@+id/Verificar"
@@ -45,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="-230dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="180dp"
             android:layout_toEndOf="@+id/imagenInicio"
             android:text="@string/pedirDatos"
             android:textSize="15sp" />
@@ -63,8 +56,7 @@
             android:layout_marginTop="360dp"
             android:drawableTint="@color/white"
             android:hint="@string/numero"
-            android:inputType="number"
-            android:textColor="@color/black" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/fecha"
@@ -99,6 +91,13 @@
             android:background="@drawable/btn_continuar"
             android:text="@string/continuar"
             android:textColor="@color/black" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="270dp"
+            android:background="@color/verde"/>
 
     </RelativeLayout>
 </layout>
