@@ -1,5 +1,6 @@
 package com.example.coink.fragment
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import com.example.coink.data.PayLoad
 import com.example.coink.data.RetrofitAdapter
 import com.example.coink.databinding.FragmentDatosCuentaBinding
+import com.example.coink.utils.DatePickerFragment
 import com.example.coink.utils.navigateTo
 import com.google.gson.Gson
 import okhttp3.ResponseBody
@@ -35,10 +37,46 @@ class DatosCuenta : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         mainBinding = FragmentDatosCuentaBinding.inflate(inflater, container, false)
+        mainBinding.fecha.setOnClickListener { showDatePickerDialog() }
+        mainBinding.fechaExpe.setOnClickListener { showDateExpPickerDialog() }
         spinnerTypeDocument()
         spinnerGenero()
         enviarDatos()
         return mainBinding.root
+    }
+
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+        datePicker.show(fragmentManager!!, "datePicker")
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun onDateSelected(day: Int, month: Int, year: Int) {
+        mainBinding.fecha.setText(
+            "${String.format("%02d", day)}/${
+                String.format("%02d", month + 1)
+            }/$year"
+        )
+
+    }
+
+    private fun showDateExpPickerDialog() {
+        val datePicker =
+            DatePickerFragment { day, month, year -> onDateExpeSelected(day, month, year) }
+        datePicker.show(fragmentManager!!, "datePicker")
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun onDateExpeSelected(day: Int, month: Int, year: Int) {
+        mainBinding.fechaExpe.setText(
+            "${String.format("%02d", day)}/${
+                String.format(
+                    "%02d",
+                    month + 1
+                )
+            }/$year"
+        )
+
     }
 
     /**

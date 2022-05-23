@@ -22,9 +22,26 @@ class VerificarDatos : Fragment() {
     ): View {
         biding = FragmentVerificarDatosBinding.inflate(inflater, container, false)
         biding.traerGenero.text = args.genero
-        biding.includeTolbar.check1.setImageDrawable(ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.sinseleccionar, null))
-        biding.includeTolbar.check2.setImageDrawable(ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.conseleccionar, null))
-        biding.btnCancelar.setOnClickListener{
+        biding.includeTolbar.apply {
+            imgback.setOnClickListener {
+                navigateBack()
+            }
+            check1.setImageDrawable(
+                ResourcesCompat.getDrawable(
+                    requireActivity().resources,
+                    R.drawable.sinseleccionar,
+                    null
+                )
+            )
+            check2.setImageDrawable(
+                ResourcesCompat.getDrawable(
+                    requireActivity().resources,
+                    R.drawable.conseleccionar,
+                    null
+                )
+            )
+        }
+        biding.btnCancelar.setOnClickListener {
             navigateBack()
         }
         return biding.root

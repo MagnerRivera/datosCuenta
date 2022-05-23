@@ -65,7 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="420dp"
-            android:ems="10"
+            android:focusable="false"
+            android:clickable="false"
             android:hint="@string/fecha"
             android:inputType="date" />
 
@@ -74,7 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="480dp"
-            android:ems="10"
+            android:focusable="false"
+            android:clickable="false"
             android:hint="@string/fechaExpe"
             android:inputType="date" />
 
@@ -88,9 +90,9 @@
             android:id="@+id/btnContinuar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="40dp"
             android:layout_marginTop="650dp"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/btn_continuar"
             android:text="@string/continuar"
             android:textColor="@color/black" />
